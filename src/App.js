@@ -32,27 +32,14 @@ function App() {
 
    const form = useRef();
   const [contactInfo, setContactInfo] = React.useState({
-    name: "",
-    studentName: "",
+    weight: "",
+    total: "",
     email: "",
     message: "",
     tours: false,
     tuition: false,
     interviews: false,
   });
-
-  const [buttonDisabled, setButtonDisabled] = React.useState(true);
-
-  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-  const [snackbarMessage, setSnackbarMessage] = React.useState('');
-  const [severity, setSeverity] = React.useState('success');
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setSnackbarOpen(false);
-  };
 
   const handleChange = (event) => {
     setContactInfo({...contactInfo, [event.target.name]: event.target.value});
@@ -63,23 +50,7 @@ function App() {
   };
 
   const sendEmail = (e) => {
-    // e.preventDefault();
-    //
-    // // ReCaptcha check happens on page load, or you can opt to handle here
-    // // handleReCaptchaVerify()
-    //
-    // emailjs.sendForm('service_pnb2nyq', 'template_es3y3te', form.current, 'gu-hA3kpsklXgJlzn')
-    //   .then((result) => {
-    //     setSeverity('success')
-    //     setSnackbarMessage("Message sent")
-    //     setSnackbarOpen(true)
-    //   }, (error) => {
-    //     setSeverity('error')
-    //     setSnackbarMessage("Message not sent. " + error.text)
-    //     setSnackbarOpen(true)
-    //   });
   };
-
 
   return (
 
@@ -92,16 +63,12 @@ function App() {
         onSubmit={sendEmail}
       >
         <Stack spacing={2}>
-          <TextField required name="name" label="Total" variant="outlined" sx={textFieldStyle}
+          <TextField required name="total" label="Total" variant="outlined" sx={textFieldStyle}
                      value={contactInfo.name}
                      onChange={handleChange}/>
-          <TextField name="studentName" label="Bodyweight" variant="outlined" sx={textFieldStyle}
+          <TextField required name="weight" label="Bodyweight" variant="outlined" sx={textFieldStyle}
                      value={contactInfo.studentName} onChange={handleChange}/>
-          {/*<TextField required name="email" label="" variant="outlined" sx={textFieldStyle}*/}
-          {/*           value={contactInfo.email} onChange={handleChange}/>*/}
-          {/*<TextField name="message" label="" variant="outlined" sx={textFieldStyle} multiline*/}
-          {/*           maxRows={4}*/}
-          {/*           value={contactInfo.message} onChange={handleChange}/>*/}
+
           <FormGroup>
 
             <T>I'm OK with</T>
@@ -117,25 +84,16 @@ function App() {
                               value={contactInfo.interviews} onChange={handleCheckboxChange}/>
           </FormGroup>
           <div style={{textAlign: 'center'}}>
-            <Button variant="contained" sx={buttonStyle} type="submit" disabled={buttonDisabled}>
+            <Button variant="contained" sx={buttonStyle} type="submit" href='/#/lifters/1'>
               I'm horny let's go
             </Button>
           </div>
         </Stack>
       </form>
 
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity={severity} sx={{width: '100%'}}>
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
     </Container>
   </StyledDiv>
 
-    //
-    //           </div>
-    //
-    // </div>
   );
 }
 
