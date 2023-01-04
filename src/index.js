@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
+import {ThemeProvider} from '@mui/material/styles';
+import NavigationMenu from "./Menu";
 import reportWebVitals from './reportWebVitals';
+import {Routing} from "./Routing";
+import {theme} from "./theme";
+
+const style = {
+  width: '100vw - 0px',
+  backgroundColor: '#fcf8f0',
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <ThemeProvider theme={theme}>
+        <div style={style}>
+          <NavigationMenu/>
+          <Routing/>
+          {/*<SimpleBottomNavigation/>*/}
+        </div>
+      </ThemeProvider>
   </React.StrictMode>
 );
 
