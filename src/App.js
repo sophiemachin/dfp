@@ -97,11 +97,11 @@ function App() {
                      onChange={handleChange}/>
           <TextField name="studentName" label="Bodyweight" variant="outlined" sx={textFieldStyle}
                      value={contactInfo.studentName} onChange={handleChange}/>
-          <TextField required name="email" label="" variant="outlined" sx={textFieldStyle}
-                     value={contactInfo.email} onChange={handleChange}/>
-          <TextField name="message" label="" variant="outlined" sx={textFieldStyle} multiline
-                     maxRows={4}
-                     value={contactInfo.message} onChange={handleChange}/>
+          {/*<TextField required name="email" label="" variant="outlined" sx={textFieldStyle}*/}
+          {/*           value={contactInfo.email} onChange={handleChange}/>*/}
+          {/*<TextField name="message" label="" variant="outlined" sx={textFieldStyle} multiline*/}
+          {/*           maxRows={4}*/}
+          {/*           value={contactInfo.message} onChange={handleChange}/>*/}
           <FormGroup>
 
             <T>I'm OK with</T>
