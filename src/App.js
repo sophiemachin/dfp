@@ -62,22 +62,34 @@ function App() {
     setContactInfo({...contactInfo, [event.target.name]: !contactInfo[event.target.name]});
   };
 
+  const sendEmail = (e) => {
+    // e.preventDefault();
+    //
+    // // ReCaptcha check happens on page load, or you can opt to handle here
+    // // handleReCaptchaVerify()
+    //
+    // emailjs.sendForm('service_pnb2nyq', 'template_es3y3te', form.current, 'gu-hA3kpsklXgJlzn')
+    //   .then((result) => {
+    //     setSeverity('success')
+    //     setSnackbarMessage("Message sent")
+    //     setSnackbarOpen(true)
+    //   }, (error) => {
+    //     setSeverity('error')
+    //     setSnackbarMessage("Message not sent. " + error.text)
+    //     setSnackbarOpen(true)
+    //   });
+  };
+
 
   return (
-    // <div className="App">
-    //           <div style={containerStyle}>
-    //
-    //
-    //   <TextField id="outlined-basic" label="Total" variant="outlined" />
-    //   <TextField id="outlined-basic" label="Bodyweight" variant="outlined" />
-    //   <p>sfsdfsds</p>
+
 
 <StyledDiv>
     <Container maxWidth='xs'>
       <T variant='h1' sx={{marginBottom: '25px'}}>Dating for powerlifters: find hot singlets in your area</T>
       <form
         ref={form}
-        // onSubmit={sendEmail}
+        onSubmit={sendEmail}
       >
         <Stack spacing={2}>
           <TextField required name="name" label="Total" variant="outlined" sx={textFieldStyle}
