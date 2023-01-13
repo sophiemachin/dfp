@@ -1,5 +1,10 @@
-CREATE TABLE test_table(
-    test_id SERIAL
-);
+DROP TABLE users;
 
-DROP TABLE test_table;
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    lifting_total FLOAT,
+    bodyweight FLOAT,
+    name VARCHAR,
+    sumo BOOL,
+    peds BOOL
+);
