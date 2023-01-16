@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Installing psycopg2
+
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+echo 'export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"' >> ~/.zshrc
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
