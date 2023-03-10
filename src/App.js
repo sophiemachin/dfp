@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import { useNavigate } from 'react-router-dom'
 // import './App.css';
 
 import {
@@ -30,6 +31,7 @@ const buttonStyle = {
 function App() {
 
    const form = useRef();
+   const navigate = useNavigate()
   const [contactInfo, setContactInfo] = React.useState({
     bodyweight: "",
     lifting_total: "",
@@ -61,6 +63,8 @@ function App() {
     fetch("http://127.0.0.1:5000/register", requestOptions)
           .then((res) => res.text())
           .then((json) => console.log(json))
+
+    navigate('/lifters/1')
 
   };
 

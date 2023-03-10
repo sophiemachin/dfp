@@ -43,25 +43,25 @@ export function Lifters() {
       [])
 
     const { id } = useParams();
-    console.log(lifters)
 
+    let nextId = parseInt(id) + 1
+    let nextUrl = '/#/lifters/' + nextId.toString()
 
-    let idAsInt = parseInt("id");
     return <StyledDiv>
 
         <Grid container>
             <Container maxWidth='xs'>
                 <Grid item xs={11} sm={11} component={Card} sx={paperStyles}>
                     <CardContent>
-                        <T variant="body1">Total: {lifter_data[id]["lifting_total"]} kg</T>
-                        <T variant="body1">Bodyweight: {lifter_data[id]["bodyweight"]} kg</T>
+                        <T variant="body1">Total: {lifters[id]["lifting_total"]} kg</T>
+                        <T variant="body1">Bodyweight: {lifters[id]["bodyweight"]} kg</T>
                         {/*{contactInfo}*/}
                     </CardContent>
                 </Grid>
 
 
                 <div style={buttonGroup}>
-                    <Button variant="contained" color="secondary" >Pass</Button>
+                    <Button variant="contained" color="secondary" href={nextUrl}>Pass</Button>
                     <Button variant="contained" href="/#/match/1">Smash</Button>
                 </div>
             </Container>
