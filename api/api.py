@@ -65,5 +65,9 @@ def remove():
     return 'ok', 200
 
 
+# if running with PyCharm
 if __name__ == '__main__':
     app.run()
+
+# if running with gunicorn
+application = app
